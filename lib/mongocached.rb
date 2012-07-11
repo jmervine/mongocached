@@ -12,8 +12,9 @@ class Mongocached
 
     unless @options[:lifetime].nil?
       @cleanup_last = Time.now
-      @options[:cleanup_auto] = false
       @options[:cleanup_life] = ( @options[:lifetime] < 1800 ? @options[:lifetime] : 1800 )
+    else
+      @options[:cleanup_auth] = false
     end
 
     @last = nil
@@ -23,7 +24,7 @@ class Mongocached
 
   def defaults
     {
-      cache_id_prefix:              nil,
+      #cache_id_prefix:              nil,
       lifetime:                     3600,
       automatic_serialization:      true,
       host:                         'localhost',
@@ -37,21 +38,10 @@ class Mongocached
   end
 
   # return true if cache is expired
-  def expired? id
-    return false if @options[:lifetime].nil?
-    @last = read_cache(key)
-    if @last['expires'] && @last['expires'] < Time.now
-      delete(id)
-      true
-    else
-      false
-    end
-  end
-
-  # returns true if cache exists
-  def exists? id
-    return !last_or_get(id).nil?
-  end
+  #def expired? id
+    #@last = read_cache(id)
+    #@last.nil?
+  #end
 
   # expire cache
   def delete id
@@ -62,22 +52,25 @@ class Mongocached
 
   # delete all caches
   def flush
-    @store.drop
+    collection.drop
   end
   alias :clean :flush
 
   # flush expired caches if cleanup hasn't been run recently
   def flush_expired 
-    if @cleanup_last && @options[:cleanup_life] && (@cleanup_last+@options[:cleanup_life]) < Time.now
+    if !@cleanup_last.nil? && !@options[:cleanup_life].nil? && (@cleanup_last+@options[:cleanup_life]) < Time.now
       flush_expired!
     end
   end
 
   # flush expired caches, ingoring when garbage collection was last run
-  # TODO: does this need to be forked?
+  # update indexes
   def flush_expired!
     gcpid = Process.fork do
       collection.remove(expires: {'$lt' => Time.now})
+      collection.ensure_index([[:tags, 1]])
+      collection.ensure_index([[:expires, -1]])
+      @cleanup_last = Time.now
     end
     Process.detach(gcpid)
   end
@@ -86,14 +79,20 @@ class Mongocached
   # create or read cache
   # - creates cache if it doesn't exist
   # - reads cache if it exists
-  def save key, tags = [], ttl = @options[:lifetime]
+  def save id, tags = [], ttl = @options[:lifetime]
     begin
-      if expired?(key)
-        data = Proc.new { yield }.call
-        set( key, data, tags, ttl )
-      end
-      data ||= get( key )
+      doc = collection.find_one(_id: id, expires: { '$gt' => Time.now })
+      return deserialize(doc['data']) unless doc.nil?
+
+      data = Proc.new { yield }.call
+      collection.save({
+        _id:      id,
+        data:     serialize(data),
+        tags:     tags,
+        expires:  calc_expires(ttl)
+      })
       return data
+
     rescue LocalJumpError
       # when nothing is passed to yield and it's called
       return nil
@@ -101,58 +100,67 @@ class Mongocached
   end
   alias :cache :save 
 
-  # set cache with 'key'
+  # set cache
   # - creates cache if it doesn't exist
   # - updates cache if it does exist
   def set id, data, tags = [], ttl = @options[:lifetime]
-    @last = {
+    collection.save({
       _id:      id,
-      data:     data,
+      data:     serialize(data),
       tags:     tags,
       expires:  calc_expires(ttl)
-    }
-    collection.save( @last )
-    flush_expired if gc_auto
+    })
+    flush_expired if @options[:cleanup_auto]
     true
   end
   alias :add :set        # for memcached compatability
   alias :replace :set    # for memcached compatability
 
-  # get cache with 'key'
+  # get cache
   # - reads cache if it exists and isn't expired or raises Diskcache::NotFound
-  # - if 'key' is an Array returns only keys which exist and aren't expired, it raises Diskcache::NotFound if none are available
+  # - if passed an Array returns only items which exist and aren't expired, it raises Diskcache::NotFound if none are available
   def get id
+    flush_expired if @options[:cleanup_auto]
     if id.is_a? Array
-      # TODO: more mongo'y wat to do this, perhaps a map/reduce?
+      # TODO: more mongo'y way to do this, perhaps a map/reduce?
       hash = {}
       id.each do |i|
-        hash[i] = last_or_get(id)['data'] unless expired?(id)
+        doc = collection.find_one(_id: i, expires: { '$gt' => Time.now })
+        hash[i] = deserialize(doc['data']) unless doc.nil?
       end
-      raise Mongocached::NotFound if hash.nil?
-      hash
+      return hash unless hash.empty?
     else
-      @last = last_or_get(id)
-      raise Mongocached::NotFound if @last.nil? || expired?(id)
-      @last['data']
+      doc = collection.find_one(_id: id, expires: { '$gt' => Time.now })
+      return deserialize(doc['data']) unless doc.nil?
     end
+    raise Mongocached::NotFound 
   end
   alias :load :get
 
   private
+  def serialize data
+    if @options[:automatic_serialization]  
+      Marshal::dump(data) 
+    else
+      data
+    end
+  end
+
+  def deserialize data
+    if @options[:automatic_serialization]  
+      Marshal::load(data) 
+    else
+      data
+    end
+  end
+
   def calc_expires ttl = @options[:lifetime]
     return nil if ttl.nil?
     Time.now+ttl
   end
 
-  def last_or_get id
-    unless (@last && @last.has_key?('_id') && @last['_id'] == id)
-      @last = read_cache(id)
-    end
-    @last
-  end
-
   def read_cache id
-    collection.find_one('_id' => id) rescue nil
+    collection.find_one(_id: id, expires: {'$gt' => Time.now}) rescue nil
   end
 
   def collection

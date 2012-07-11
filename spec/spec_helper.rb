@@ -7,12 +7,7 @@ require 'fileutils'
 require 'pp'
 require './lib/mongocached'
 
-HOST = 'localhost'
-PORT = 27017
-DATABASE = 'rspec'
-COLLECTION = 'rspec_cache' 
-
-STORE = Mongo::Connection.new(HOST, PORT, :pool_size => 5).db(DATABASE).collection(COLLECTION)
+STORE = Mongo::Connection.new('localhost', '27017').db('mongocached').collection('cache')
 
 # create things to cache and test
 class TestObject
