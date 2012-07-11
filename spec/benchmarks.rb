@@ -18,70 +18,74 @@ SMALL_STR  = "foo"
 TIMES      = 100000
 
 # print ruby version as header
-puts "## Ruby #{`ruby -v | awk '{print $2}'`.chomp}"
+puts "### Ruby #{`ruby -v | awk '{print $2}'`.chomp}"
+puts " "
+puts " mo = mongocached / me = memcached"
 
-  mongocache  = Mongocached.new
+  mongocache  = Mongocached.new({ cleanup_auto: false })
   memcache = Memcached.new('localhost:11211')
+  mongocache.flush
+  memcache.flush
 
   puts " "
   puts "#### small string * #{TIMES}"
+  puts "<pre>"
   dataset = SMALL_STR
 
-  mongocache.set('read', dataset)
-  memcache.set 'read', dataset
-
   Benchmark.bm do |b|
-    b.report('mongocached set') do
+    b.report('mo set') do
       (1..TIMES).each do
-        mongocache.set('write', dataset)
+        mongocache.set("small", dataset)
       end
     end
-    b.report('memcached  set') do
+    b.report('me set') do
       (1..TIMES).each do
-        memcache.set 'write', dataset
+        memcache.set("small", dataset)
       end
     end
-    b.report('mongocached get') do
+    b.report('mo get') do
       (1..TIMES).each do
-        x = mongocache.get('read') 
+        mongocache.get("small") 
       end
     end
-    b.report('memcached  get') do
+    b.report('me get') do
       (1..TIMES).each do
-        memcache.get 'read'
+        memcache.get("small")
       end
     end
   end
 
   mongocache.flush
+  memcache.flush
 
+  puts "</pre>"
   puts " "
   puts " "
   puts "#### large hash * #{TIMES}"
+  puts "<pre>"
   dataset = LARGE_HASH
 
-  mongocache.cache('read') { dataset }
-  memcache.set 'read', dataset
   Benchmark.bm do |b|
-    b.report('mongocached set') do
+    b.report('mo set') do
       (1..TIMES).each do
-        mongocache.set('write', dataset)
+        mongocache.set("large", dataset)
       end
     end
-    b.report('memcached  set') do
+    b.report('me set') do
       (1..TIMES).each do
-        memcache.set 'write', dataset
+        memcache.set("large", dataset)
       end
     end
-    b.report('mongocached get') do
+    b.report('mo get') do
       (1..TIMES).each do
-        x = mongocache.get('read') 
+        x = mongocache.get("large") 
       end
     end
-    b.report('memcached  get') do
+    b.report('me get') do
       (1..TIMES).each do
-        memcache.get 'read'
+        memcache.get("large")
       end
     end
   end
+  puts "</pre>"
 

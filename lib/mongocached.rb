@@ -113,8 +113,26 @@ class Mongocached
     flush_expired if @options[:cleanup_auto]
     true
   end
-  alias :add :set        # for memcached compatability
   alias :replace :set    # for memcached compatability
+
+  # add cache
+  # - creates cache if it doesn't exist
+  # - return false if it does
+  def add id, data, tags = [], ttl = @options[:lifetime]
+    begin
+      collection.insert({
+        _id:      id,
+        data:     serialize(data),
+        tags:     tags,
+        expires:  calc_expires(ttl)
+      }, save: true)
+    rescue Mongo::OperationFailure
+      flush_expired if @options[:cleanup_auto]
+      return false
+    end
+    flush_expired if @options[:cleanup_auto]
+    return true
+  end
 
   # get cache
   # - reads cache if it exists and isn't expired or raises Diskcache::NotFound
@@ -125,13 +143,17 @@ class Mongocached
       # TODO: more mongo'y way to do this, perhaps a map/reduce?
       hash = {}
       id.each do |i|
-        doc = collection.find_one(_id: i, expires: { '$gt' => Time.now })
-        hash[i] = deserialize(doc['data']) unless doc.nil?
+        doc = collection.find_one(_id: i)
+        if !doc.nil? && doc['expires'] > Time.now
+          hash[i] = deserialize(doc['data']) 
+        end
       end
       return hash unless hash.empty?
     else
-      doc = collection.find_one(_id: id, expires: { '$gt' => Time.now })
-      return deserialize(doc['data']) unless doc.nil?
+      doc = collection.find_one(_id: id)
+      if !doc.nil? && doc['expires'] > Time.now
+        return deserialize(doc['data']) 
+      end
     end
     raise Mongocached::NotFound 
   end
