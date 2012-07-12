@@ -5,6 +5,7 @@ class Mongocached
   VERSION = '1.0.0'
 
   @cleanup_last = nil
+  @ensure_indexes = false
 
   # initialize object
   def initialize options={}
@@ -19,7 +20,7 @@ class Mongocached
 
     @last = nil
 
-    flush_expired # run cleanup 
+    flush_expired!
   end
 
   def defaults
@@ -62,8 +63,10 @@ class Mongocached
   def flush_expired!
     gcpid = Process.fork do
       collection.remove(expires: {'$lt' => Time.now})
-      collection.ensure_index([[:tags, 1]])
-      collection.ensure_index([[:expires, -1]])
+      unless @ensure_indexes
+        collection.ensure_index([[:tags, 1]])
+        collection.ensure_index([[:expires, -1]])
+      end
       @cleanup_last = Time.now
     end
     Process.detach(gcpid)
@@ -135,6 +138,7 @@ class Mongocached
     flush_expired if @options[:cleanup_auto]
     if id.is_a? Array
       # TODO: more mongo'y way to do this, perhaps a map/reduce?
+      # STORE.find({ _id: {'$in' => ['no1', 'no2', 'no3']}})
       hash = {}
       id.each do |i|
         doc = collection.find_one(_id: i)

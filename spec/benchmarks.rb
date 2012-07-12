@@ -24,6 +24,7 @@ puts " mo = mongocached / me = memcached"
 
   mongocache  = Mongocached.new({ cleanup_auto: false })
   memcache = Memcached.new('localhost:11211')
+  sleep 1
   mongocache.flush
   memcache.flush
 
