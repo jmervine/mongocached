@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Mongocached</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./lib/mongocached_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/mongocached.rb">lib/mongocached.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Mongocached/NotFound.html">Mongocached::NotFound</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-add">#add</a></li>
+          
+          <li><a href="#method-i-cache">#cache</a></li>
+          
+          <li><a href="#method-i-clean">#clean</a></li>
+          
+          <li><a href="#method-i-clean_expired">#clean_expired</a></li>
+          
+          <li><a href="#method-i-defaults">#defaults</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-flush">#flush</a></li>
+          
+          <li><a href="#method-i-flush_expired">#flush_expired</a></li>
+          
+          <li><a href="#method-i-flush_expired-21">#flush_expired!</a></li>
+          
+          <li><a href="#method-i-get">#get</a></li>
+          
+          <li><a href="#method-i-load">#load</a></li>
+          
+          <li><a href="#method-i-remove">#remove</a></li>
+          
+          <li><a href="#method-i-replace">#replace</a></li>
+          
+          <li><a href="#method-i-save">#save</a></li>
+          
+          <li><a href="#method-i-set">#set</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Mongocached.html">Mongocached</a></li>
+        
+          <li><a href="./Mongocached/NotFound.html">Mongocached::NotFound</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Mongocached</h1>
+
+    <div id="description" class="description">
+      
+<p>@author Joshua P. Mervine &lt;joshua@mervine.net&gt;</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"><p>version for gem</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(options={})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>initialize object</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">options</span>={}
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">options</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@cleanup_last</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_life</span>] = ( <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-value">1800</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>] <span class="ruby-operator">:</span> <span class="ruby-value">1800</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>] = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@last</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">flush_expired</span> <span class="ruby-comment"># run cleanup </span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add-method" class="method-detail ">
+          <a name="method-i-add"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add</span><span
+              class="method-args">(id, data, tags = [], ttl = @options[:lifetime])</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>add cache</p>
+<ul><li>
+<p>creates cache if it doesn’t exist</p>
+</li><li>
+<p>return false if it does</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="add-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">insert</span>({
+      <span class="ruby-identifier">_id</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">id</span>,
+      <span class="ruby-identifier">data</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">data</span>),
+      <span class="ruby-identifier">tags</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">tags</span>,
+      <span class="ruby-identifier">expires</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">calc_expires</span>(<span class="ruby-identifier">ttl</span>)
+    }, <span class="ruby-identifier">safe</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Mongo</span><span class="ruby-operator">::</span><span class="ruby-constant">OperationFailure</span>
+    <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- add-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add-method -->
+
+      
+        <div id="cache-method" class="method-detail method-alias">
+          <a name="method-i-cache"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cache</span><span
+              class="method-args">(id, tags = [], ttl = @options[:lifetime])</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-save">save</a>
+          </div>
+          
+        </div><!-- cache-method -->
+
+      
+        <div id="clean-method" class="method-detail method-alias">
+          <a name="method-i-clean"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clean</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-flush">flush</a>
+          </div>
+          
+        </div><!-- clean-method -->
+
+      
+        <div id="clean_expired-method" class="method-detail method-alias">
+          <a name="method-i-clean_expired"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clean_expired</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-flush_expired-21">flush_expired!</a>
+          </div>
+          
+        </div><!-- clean_expired-method -->
+
+      
+        <div id="defaults-method" class="method-detail ">
+          <a name="method-i-defaults"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">defaults</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="defaults-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defaults</span>
+  {
+    <span class="ruby-comment">#cache_id_prefix:              nil,</span>
+    <span class="ruby-identifier">lifetime</span><span class="ruby-operator">:</span>                     <span class="ruby-value">3600</span>,
+    <span class="ruby-identifier">automatic_serialization</span><span class="ruby-operator">:</span>      <span class="ruby-keyword">true</span>,
+    <span class="ruby-identifier">host</span><span class="ruby-operator">:</span>                         <span class="ruby-string">'localhost'</span>,
+    <span class="ruby-identifier">port</span><span class="ruby-operator">:</span>                         <span class="ruby-string">'27017'</span>,
+    <span class="ruby-identifier">dbname</span><span class="ruby-operator">:</span>                       <span class="ruby-string">'mongocached'</span>,
+    <span class="ruby-identifier">collection</span><span class="ruby-operator">:</span>                   <span class="ruby-string">'cache'</span>,
+    <span class="ruby-identifier">cleanup_auto</span><span class="ruby-operator">:</span>                 <span class="ruby-keyword">true</span>,
+    <span class="ruby-identifier">cleanup_life</span><span class="ruby-operator">:</span>                 <span class="ruby-value">1800</span>,
+    <span class="ruby-identifier">config</span><span class="ruby-operator">:</span>                       {}
+  }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- defaults-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- defaults-method -->
+
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>expire cache</p>
+            
+
+            
+            <div class="method-source-code" id="delete-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-ivar">@last</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- delete-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-remove">remove</a>
+          </div>
+          
+
+          
+        </div><!-- delete-method -->
+
+      
+        <div id="flush-method" class="method-detail ">
+          <a name="method-i-flush"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">flush</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>delete all caches</p>
+            
+
+            
+            <div class="method-source-code" id="flush-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">drop</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- flush-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-clean">clean</a>
+          </div>
+          
+
+          
+        </div><!-- flush-method -->
+
+      
+        <div id="flush_expired-method" class="method-detail ">
+          <a name="method-i-flush_expired"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">flush_expired</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>flush expired caches if cleanup hasn’t been run recently</p>
+            
+
+            
+            <div class="method-source-code" id="flush_expired-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flush_expired</span> 
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@cleanup_last</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_life</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-ivar">@cleanup_last</span><span class="ruby-operator">+</span><span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_life</span>]) <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-identifier">flush_expired!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- flush_expired-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- flush_expired-method -->
+
+      
+        <div id="flush_expired-21-method" class="method-detail ">
+          <a name="method-i-flush_expired-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">flush_expired!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>flush expired caches, ingoring when garbage collection was last run update
+indexes</p>
+            
+
+            
+            <div class="method-source-code" id="flush_expired-21-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flush_expired!</span>
+  <span class="ruby-identifier">gcpid</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">fork</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-identifier">expires</span><span class="ruby-operator">:</span> {<span class="ruby-string">'$lt'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>})
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">ensure_index</span>([[<span class="ruby-value">:tags</span>, <span class="ruby-value">1</span>]])
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">ensure_index</span>([[<span class="ruby-value">:expires</span>, <span class="ruby-value">-1</span>]])
+    <span class="ruby-ivar">@cleanup_last</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Process</span>.<span class="ruby-identifier">detach</span>(<span class="ruby-identifier">gcpid</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- flush_expired-21-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-clean_expired">clean_expired</a>
+          </div>
+          
+
+          
+        </div><!-- flush_expired-21-method -->
+
+      
+        <div id="get-method" class="method-detail ">
+          <a name="method-i-get"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>get cache</p>
+<ul><li>
+<p>reads cache if it exists and isn’t expired or raises Diskcache::NotFound</p>
+</li><li>
+<p>if passed an Array returns only items which exist and aren’t expired, it
+raises Diskcache::NotFound if none are available</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="get-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-comment"># TODO: more mongo'y way to do this, perhaps a map/reduce?</span>
+    <span class="ruby-identifier">hash</span> = {}
+    <span class="ruby-identifier">id</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">doc</span>[<span class="ruby-string">'expires'</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">deserialize</span>(<span class="ruby-identifier">doc</span>[<span class="ruby-string">'data'</span>]) 
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">doc</span>[<span class="ruby-string">'expires'</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">deserialize</span>(<span class="ruby-identifier">doc</span>[<span class="ruby-string">'data'</span>]) 
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Mongocached</span><span class="ruby-operator">::</span><span class="ruby-constant">NotFound</span> 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-load">load</a>
+          </div>
+          
+
+          
+        </div><!-- get-method -->
+
+      
+        <div id="load-method" class="method-detail method-alias">
+          <a name="method-i-load"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">load</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-get">get</a>
+          </div>
+          
+        </div><!-- load-method -->
+
+      
+        <div id="remove-method" class="method-detail method-alias">
+          <a name="method-i-remove"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remove</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-delete">delete</a>
+          </div>
+          
+        </div><!-- remove-method -->
+
+      
+        <div id="replace-method" class="method-detail method-alias">
+          <a name="method-i-replace"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">replace</span><span
+              class="method-args">(id, data, tags = [], ttl = @options[:lifetime])</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Mongocached.html#method-i-set">set</a>
+          </div>
+          
+        </div><!-- replace-method -->
+
+      
+        <div id="save-method" class="method-detail ">
+          <a name="method-i-save"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">save</span><span
+              class="method-args">(id, tags = [], ttl = @options[:lifetime])</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>create or read cache</p>
+<ul><li>
+<p>creates cache if it doesn’t exist</p>
+</li><li>
+<p>reads cache if it exists</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="save-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">expires</span><span class="ruby-operator">:</span> { <span class="ruby-string">'$gt'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> })
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">deserialize</span>(<span class="ruby-identifier">doc</span>[<span class="ruby-string">'data'</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-keyword">yield</span> }.<span class="ruby-identifier">call</span>
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">save</span>({
+      <span class="ruby-identifier">_id</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">id</span>,
+      <span class="ruby-identifier">data</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">data</span>),
+      <span class="ruby-identifier">tags</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">tags</span>,
+      <span class="ruby-identifier">expires</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">calc_expires</span>(<span class="ruby-identifier">ttl</span>)
+    })
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>
+
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LocalJumpError</span>
+    <span class="ruby-comment"># when nothing is passed to yield and it's called</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- save-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-cache">cache</a>
+          </div>
+          
+
+          
+        </div><!-- save-method -->
+
+      
+        <div id="set-method" class="method-detail ">
+          <a name="method-i-set"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set</span><span
+              class="method-args">(id, data, tags = [], ttl = @options[:lifetime])</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>set cache</p>
+<ul><li>
+<p>creates cache if it doesn’t exist</p>
+</li><li>
+<p>updates cache if it does exist</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="set-source">
+<pre>
+<span class="ruby-comment"># File lib/mongocached.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">save</span>({
+    <span class="ruby-identifier">_id</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">id</span>,
+    <span class="ruby-identifier">data</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">data</span>),
+    <span class="ruby-identifier">tags</span><span class="ruby-operator">:</span>     <span class="ruby-identifier">tags</span>,
+    <span class="ruby-identifier">expires</span><span class="ruby-operator">:</span>  <span class="ruby-identifier">calc_expires</span>(<span class="ruby-identifier">ttl</span>)
+  })
+  <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- set-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Mongocached.html#method-i-replace">replace</a>
+          </div>
+          
+
+          
+        </div><!-- set-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

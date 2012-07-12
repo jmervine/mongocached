@@ -6,11 +6,25 @@ describe Mongocached do
       expect { @cache = Mongocached.new() }.to_not raise_error
     end
     it "should init with options" do
-      pending
+      expect { @cache = Mongocached.new( { lifetime: 1, cleanup_auto: false } ) }.to_not raise_error
+      @cache.instance_variable_get(:@options)[:lifetime].should eq 1
+      @cache.instance_variable_get(:@options)[:cleanup_auto].should be_false
+    end
+    it "should set :cleanup_auto to false when :lifetime is nil" do
+      expect { @cache = Mongocached.new( { lifetime: nil } ) }.to_not raise_error
+      @cache.instance_variable_get(:@options)[:cleanup_auto].should be_false
+    end
+    it "should have version" do
+      @cache = Mongocached.new()
+      Mongocached::VERSION.should be
+    end
+    it "should have defaults" do
+      @cache = Mongocached.new()
+      @cache.defaults.should be_a_kind_of Hash
     end
   end
 
-  describe "#set", "(alias #add, #replace)" do
+  describe "#set", "(#replace)" do
     before(:all) do
       @cache = Mongocached.new({ lifetime: 0.5 })
     end
@@ -19,6 +33,21 @@ describe Mongocached do
     end
     it "should create a cache in mongo" do
       STORE.find_one(_id: 'test1').should be
+    end
+  end
+
+  describe "#add" do
+    before(:all) do
+      @cache = Mongocached.new()
+    end
+    it "should create a new cache" do
+      @cache.add('add1', "test string").should be_true
+    end
+    it "should return false if cache exists" do
+      @cache.add('add1', "test string").should be_false
+    end
+    it "should create a cache in mongo" do
+      STORE.find_one(_id: 'add1').should be
     end
   end
 
@@ -53,24 +82,28 @@ describe Mongocached do
     end
   end
 
-  describe "#cache" do
+  describe "#save", "(alias #cache)" do
     before(:all) do
       @cache = Mongocached.new({ lifetime: 0.5 })
+      @cache.flush
     end
     it "should create a new cache" do
-      @cache.cache('test1') { "test string" }.should eq "test string"
+      @cache.save('test1') { "test string" }.should eq "test string"
       @cache.get('test1').should eq "test string"
     end
     it "should create a cache in mongo" do
       STORE.find_one(_id: 'test1').should be
     end
+    it "should be nil when trying to create/update without a block" do
+      @cache.save('fail1').should be_nil
+    end
     it "should read cache before expiration" do
-      @cache.cache('test1') { "test string" }.should eq "test string"
-      @cache.cache('test1') { "test string" }.should be_a_kind_of String
+      @cache.save('test1') { "test string" }.should eq "test string"
+      @cache.save('test1') { "test string" }.should be_a_kind_of String
     end
     it "should expire correctly" do
       sleep 0.51
-      @cache.cache('test1') do
+      @cache.save('test1') do
         "new test string"
       end.should eq "new test string"
     end
@@ -144,6 +177,7 @@ describe Mongocached do
       sleep 0.5
       @cache.instance_variable_set(:@cleanup_last, Time.now)
       expect { @cache.flush_expired! }.to_not raise_error
+      sleep 0.1
       expect { @cache.get('flush1') }.to raise_error /NotFound/
       STORE.find_one(_id: 'flush1').should be_nil
     end
@@ -261,5 +295,12 @@ describe Mongocached, "advanced test cases" do
     @cache.cache('object').hash.should be_a_kind_of Hash
     @cache.cache('object').obj.should be_a_kind_of TestSubObject
   end
+  it "should not serialize when :automatic_serialization is false" do
+    @cache = Mongocached.new( automatic_serialization: false )
+    @cache.set('sans_serial', 'test string')
+    @cache.get('sans_serial').should eq 'test string'
+    STORE.find_one(_id: 'sans_serial')['data'].should eq 'test string'
+  end
+
 
 end

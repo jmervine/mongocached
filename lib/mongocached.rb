@@ -14,7 +14,7 @@ class Mongocached
       @cleanup_last = Time.now
       @options[:cleanup_life] = ( @options[:lifetime] < 1800 ? @options[:lifetime] : 1800 )
     else
-      @options[:cleanup_auth] = false
+      @options[:cleanup_auto] = false
     end
 
     @last = nil
@@ -36,12 +36,6 @@ class Mongocached
       config:                       {}
     }
   end
-
-  # return true if cache is expired
-  #def expired? id
-    #@last = read_cache(id)
-    #@last.nil?
-  #end
 
   # expire cache
   def delete id
@@ -125,7 +119,7 @@ class Mongocached
         data:     serialize(data),
         tags:     tags,
         expires:  calc_expires(ttl)
-      }, save: true)
+      }, safe: true)
     rescue Mongo::OperationFailure
       flush_expired if @options[:cleanup_auto]
       return false
@@ -179,10 +173,6 @@ class Mongocached
   def calc_expires ttl = @options[:lifetime]
     return nil if ttl.nil?
     Time.now+ttl
-  end
-
-  def read_cache id
-    collection.find_one(_id: id, expires: {'$gt' => Time.now}) rescue nil
   end
 
   def collection

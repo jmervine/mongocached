@@ -14,7 +14,7 @@
     <link href='./assets/0.5.3/highlight.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
     <link href='./assets/0.5.3/fancybox/jquery.fancybox-1.3.1.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
     <link href='./assets/0.5.3/smoothness/jquery-ui-1.8.4.custom.css' media='screen, projection, print' rel='stylesheet' type='text/css'>    
-    <link rel="shortcut icon" type="image/png" href="./assets/0.5.3/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.5.3/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.5.3/favicon.png" />
   </head>
   
@@ -23,27 +23,27 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-07-11T15:55:54-07:00">2012-07-11T15:55:54-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-07-11T17:05:47-07:00">2012-07-11T17:05:47-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">84.44%</span></span>
+    (<span class="covered_percent"><span class="green">95.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         10.0
+         11.3
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>90</b> relevant lines. 
-    <span class="green"><b>76</b> lines covered</span> and
-    <span class="red"><b>14</b> lines missed </span>
+    <b>89</b> relevant lines. 
+    <span class="green"><b>85</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -61,12 +61,12 @@
       
       <tr>
         <td class="strong"><a href="#8ce69728d34578d35f4cd4d95d86c665ed1b402c" class="src_link" title="lib/mongocached.rb">lib/mongocached.rb</a></td>
-        <td class="yellow strong">84.44 %</td>
-        <td>206</td>
-        <td>90</td>
-        <td>76</td>
-        <td>14</td>
-        <td>10.0</td>
+        <td class="green strong">95.51 %</td>
+        <td>197</td>
+        <td>89</td>
+        <td>85</td>
+        <td>4</td>
+        <td>11.3</td>
       </tr>
       
     </tbody>
@@ -88,11 +88,11 @@
         <div class="source_table" id="8ce69728d34578d35f4cd4d95d86c665ed1b402c">
   <div class="header">
     <h3>lib/mongocached.rb</h3>
-    <h4><span class="yellow">84.44 %</span> covered</h4>
+    <h4><span class="green">95.51 %</span> covered</h4>
     <div>
-      <b>90</b> relevant lines. 
-      <span class="green"><b>76</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>89</b> relevant lines. 
+      <span class="green"><b>85</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -159,8 +159,8 @@
           <code class="ruby">  def initialize options={}</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="18" data-linenumber="11">
+          <span class="hits">18</span>
           
           <code class="ruby">    @options = defaults.merge! options</code>
         </li>
@@ -171,20 +171,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="13">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="18" data-linenumber="13">
+          <span class="hits">18</span>
           
           <code class="ruby">    unless @options[:lifetime].nil?</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="14">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="17" data-linenumber="14">
+          <span class="hits">17</span>
           
           <code class="ruby">      @cleanup_last = Time.now</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="15">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="17" data-linenumber="15">
+          <span class="hits">17</span>
           
           <code class="ruby">      @options[:cleanup_life] = ( @options[:lifetime] &lt; 1800 ? @options[:lifetime] : 1800 )</code>
         </li>
@@ -195,10 +195,10 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      @options[:cleanup_auth] = false</code>
+          <code class="ruby">      @options[:cleanup_auto] = false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -213,8 +213,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="20">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="18" data-linenumber="20">
+          <span class="hits">18</span>
           
           <code class="ruby">    @last = nil</code>
         </li>
@@ -225,8 +225,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="22">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="18" data-linenumber="22">
+          <span class="hits">18</span>
           
           <code class="ruby">    flush_expired # run cleanup </code>
         </li>
@@ -315,8 +315,8 @@
           <code class="ruby">      config:                       {}</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="37">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="19" data-linenumber="37">
+          <span class="hits">19</span>
           
           <code class="ruby">    }</code>
         </li>
@@ -336,61 +336,61 @@
         <li class="never" data-hits="" data-linenumber="40">
           
           
-          <code class="ruby">  # return true if cache is expired</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">  #def expired? id</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">    #@last = read_cache(id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">    #@last.nil?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby">  #end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
           <code class="ruby">  # expire cache</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">  def delete id</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="48">
+        <li class="covered" data-hits="3" data-linenumber="42">
           <span class="hits">3</span>
           
           <code class="ruby">    @last = nil</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="49">
+        <li class="covered" data-hits="3" data-linenumber="43">
           <span class="hits">3</span>
           
           <code class="ruby">    collection.remove(_id: id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  alias :remove :delete</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  # delete all caches</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def flush</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="49">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    collection.drop</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
@@ -402,7 +402,7 @@
         <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
-          <code class="ruby">  alias :remove :delete</code>
+          <code class="ruby">  alias :clean :flush</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
@@ -414,739 +414,739 @@
         <li class="never" data-hits="" data-linenumber="53">
           
           
-          <code class="ruby">  # delete all caches</code>
+          <code class="ruby">  # flush expired caches if cleanup hasn't been run recently</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
-          <code class="ruby">  def flush</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="55">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    collection.drop</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  alias :clean :flush</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">  # flush expired caches if cleanup hasn't been run recently</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def flush_expired </code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="61">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="61" data-linenumber="55">
+          <span class="hits">61</span>
           
           <code class="ruby">    if !@cleanup_last.nil? &amp;&amp; !@options[:cleanup_life].nil? &amp;&amp; (@cleanup_last+@options[:cleanup_life]) &lt; Time.now</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="62">
+        <li class="covered" data-hits="5" data-linenumber="56">
           <span class="hits">5</span>
           
           <code class="ruby">      flush_expired!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">  # flush expired caches, ingoring when garbage collection was last run</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">  # update indexes</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
           <code class="ruby">  def flush_expired!</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="69">
+        <li class="covered" data-hits="7" data-linenumber="63">
           <span class="hits">7</span>
           
           <code class="ruby">    gcpid = Process.fork do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">      collection.remove(expires: {'$lt' =&gt; Time.now})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">      collection.ensure_index([[:tags, 1]])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="72">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">      collection.ensure_index([[:expires, -1]])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="67">
           
           
           <code class="ruby">      @cleanup_last = Time.now</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="75">
+        <li class="covered" data-hits="7" data-linenumber="69">
           <span class="hits">7</span>
           
           <code class="ruby">    Process.detach(gcpid)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  alias :clean_expired :flush_expired!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">  # create or read cache</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  # - creates cache if it doesn't exist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  # - reads cache if it exists</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">  def save id, tags = [], ttl = @options[:lifetime]</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="83">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="39" data-linenumber="77">
+          <span class="hits">39</span>
           
           <code class="ruby">    begin</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="84">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="39" data-linenumber="78">
+          <span class="hits">39</span>
           
           <code class="ruby">      doc = collection.find_one(_id: id, expires: { '$gt' =&gt; Time.now })</code>
         </li>
       
-        <li class="covered" data-hits="38" data-linenumber="85">
-          <span class="hits">38</span>
+        <li class="covered" data-hits="39" data-linenumber="79">
+          <span class="hits">39</span>
           
           <code class="ruby">      return deserialize(doc['data']) unless doc.nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="87">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="42" data-linenumber="81">
+          <span class="hits">42</span>
           
           <code class="ruby">      data = Proc.new { yield }.call</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="88">
+        <li class="covered" data-hits="19" data-linenumber="82">
           <span class="hits">19</span>
           
           <code class="ruby">      collection.save({</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby">        _id:      id,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">        data:     serialize(data),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">        tags:     tags,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">        expires:  calc_expires(ttl)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">      })</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="94">
+        <li class="covered" data-hits="19" data-linenumber="88">
           <span class="hits">19</span>
           
           <code class="ruby">      return data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="90">
+          <span class="hits">2</span>
           
           <code class="ruby">    rescue LocalJumpError</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">      # when nothing is passed to yield and it's called</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="98">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="92">
+          <span class="hits">2</span>
           
           <code class="ruby">      return nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="93">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
           <code class="ruby">  alias :cache :save </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">  # set cache</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">  # - creates cache if it doesn't exist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">  # - updates cache if it does exist</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="106">
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">  def set id, data, tags = [], ttl = @options[:lifetime]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="107">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="101">
+          <span class="hits">13</span>
           
           <code class="ruby">    collection.save({</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="108">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby">      _id:      id,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="109">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">      data:     serialize(data),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">      tags:     tags,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">      expires:  calc_expires(ttl)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="never" data-hits="" data-linenumber="106">
           
           
           <code class="ruby">    })</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="113">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="107">
+          <span class="hits">13</span>
           
           <code class="ruby">    flush_expired if @options[:cleanup_auto]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="114">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="108">
+          <span class="hits">13</span>
           
           <code class="ruby">    true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="116">
+        <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
           <code class="ruby">  alias :replace :set    # for memcached compatability</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="111">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="never" data-hits="" data-linenumber="112">
           
           
           <code class="ruby">  # add cache</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="119">
+        <li class="never" data-hits="" data-linenumber="113">
           
           
           <code class="ruby">  # - creates cache if it doesn't exist</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="never" data-hits="" data-linenumber="114">
           
           
           <code class="ruby">  # - return false if it does</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="121">
+        <li class="covered" data-hits="1" data-linenumber="115">
           <span class="hits">1</span>
           
           <code class="ruby">  def add id, data, tags = [], ttl = @options[:lifetime]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="122">
-          
+        <li class="covered" data-hits="2" data-linenumber="116">
+          <span class="hits">2</span>
           
           <code class="ruby">    begin</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="123">
-          
+        <li class="covered" data-hits="2" data-linenumber="117">
+          <span class="hits">2</span>
           
           <code class="ruby">      collection.insert({</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby">        _id:      id,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="125">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
           <code class="ruby">        data:     serialize(data),</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="120">
           
           
           <code class="ruby">        tags:     tags,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="121">
           
           
           <code class="ruby">        expires:  calc_expires(ttl)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="122">
           
           
-          <code class="ruby">      }, save: true)</code>
+          <code class="ruby">      }, safe: true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
+        <li class="never" data-hits="" data-linenumber="123">
           
           
           <code class="ruby">    rescue Mongo::OperationFailure</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="130">
-          
+        <li class="covered" data-hits="1" data-linenumber="124">
+          <span class="hits">1</span>
           
           <code class="ruby">      flush_expired if @options[:cleanup_auto]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="131">
-          
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
           
           <code class="ruby">      return false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="132">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="133">
-          
+        <li class="covered" data-hits="1" data-linenumber="127">
+          <span class="hits">1</span>
           
           <code class="ruby">    flush_expired if @options[:cleanup_auto]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="134">
-          
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
           
           <code class="ruby">    return true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="135">
+        <li class="never" data-hits="" data-linenumber="129">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby">  # get cache</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="138">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">  # - reads cache if it exists and isn't expired or raises Diskcache::NotFound</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="139">
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby">  # - if passed an Array returns only items which exist and aren't expired, it raises Diskcache::NotFound if none are available</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="140">
+        <li class="covered" data-hits="1" data-linenumber="134">
           <span class="hits">1</span>
           
           <code class="ruby">  def get id</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="141">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="25" data-linenumber="135">
+          <span class="hits">25</span>
           
           <code class="ruby">    flush_expired if @options[:cleanup_auto]</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="142">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="25" data-linenumber="136">
+          <span class="hits">25</span>
           
           <code class="ruby">    if id.is_a? Array</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="143">
+        <li class="never" data-hits="" data-linenumber="137">
           
           
           <code class="ruby">      # TODO: more mongo'y way to do this, perhaps a map/reduce?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="144">
+        <li class="covered" data-hits="4" data-linenumber="138">
           <span class="hits">4</span>
           
           <code class="ruby">      hash = {}</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="145">
+        <li class="covered" data-hits="4" data-linenumber="139">
           <span class="hits">4</span>
           
           <code class="ruby">      id.each do |i|</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="146">
+        <li class="covered" data-hits="8" data-linenumber="140">
           <span class="hits">8</span>
           
-          <code class="ruby">        doc = collection.find_one(_id: i, expires: { '$gt' =&gt; Time.now })</code>
+          <code class="ruby">        doc = collection.find_one(_id: i)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="147">
+        <li class="covered" data-hits="8" data-linenumber="141">
           <span class="hits">8</span>
           
-          <code class="ruby">        hash[i] = deserialize(doc['data']) unless doc.nil?</code>
+          <code class="ruby">        if !doc.nil? &amp;&amp; doc['expires'] &gt; Time.now</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="covered" data-hits="6" data-linenumber="142">
+          <span class="hits">6</span>
+          
+          <code class="ruby">          hash[i] = deserialize(doc['data']) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="144">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="149">
+        <li class="covered" data-hits="4" data-linenumber="145">
           <span class="hits">4</span>
           
           <code class="ruby">      return hash unless hash.empty?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="never" data-hits="" data-linenumber="146">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="covered" data-hits="21" data-linenumber="147">
+          <span class="hits">21</span>
           
-          
-          <code class="ruby">      #doc = collection.find_one(_id: id, expires: { '$gt' =&gt; Time.now })</code>
+          <code class="ruby">      doc = collection.find_one(_id: id)</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="152">
-          <span class="hits">20</span>
-          
-          <code class="ruby">      doc = collection.find_one(_id: id) #, expires: { '$gt' =&gt; Time.now })</code>
-        </li>
-      
-        <li class="covered" data-hits="20" data-linenumber="153">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="21" data-linenumber="148">
+          <span class="hits">21</span>
           
           <code class="ruby">      if !doc.nil? &amp;&amp; doc['expires'] &gt; Time.now</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="154">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="149">
+          <span class="hits">17</span>
           
           <code class="ruby">        return deserialize(doc['data']) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="155">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="157">
+        <li class="covered" data-hits="5" data-linenumber="152">
           <span class="hits">5</span>
           
           <code class="ruby">    raise Mongocached::NotFound </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="153">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="159">
+        <li class="covered" data-hits="1" data-linenumber="154">
           <span class="hits">1</span>
           
           <code class="ruby">  alias :load :get</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="161">
+        <li class="covered" data-hits="1" data-linenumber="156">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="162">
+        <li class="covered" data-hits="1" data-linenumber="157">
           <span class="hits">1</span>
           
           <code class="ruby">  def serialize data</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="163">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="34" data-linenumber="158">
+          <span class="hits">34</span>
           
           <code class="ruby">    if @options[:automatic_serialization]  </code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="164">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="33" data-linenumber="159">
+          <span class="hits">33</span>
           
           <code class="ruby">      Marshal::dump(data) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="160">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="166">
-          
+        <li class="covered" data-hits="1" data-linenumber="161">
+          <span class="hits">1</span>
           
           <code class="ruby">      data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="167">
+        <li class="never" data-hits="" data-linenumber="162">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="168">
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="169">
+        <li class="never" data-hits="" data-linenumber="164">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="170">
+        <li class="covered" data-hits="1" data-linenumber="165">
           <span class="hits">1</span>
           
           <code class="ruby">  def deserialize data</code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="171">
-          <span class="hits">40</span>
+        <li class="covered" data-hits="41" data-linenumber="166">
+          <span class="hits">41</span>
           
           <code class="ruby">    if @options[:automatic_serialization]  </code>
         </li>
       
-        <li class="covered" data-hits="40" data-linenumber="172">
+        <li class="covered" data-hits="40" data-linenumber="167">
           <span class="hits">40</span>
           
           <code class="ruby">      Marshal::load(data) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="173">
+        <li class="never" data-hits="" data-linenumber="168">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="174">
-          
+        <li class="covered" data-hits="1" data-linenumber="169">
+          <span class="hits">1</span>
           
           <code class="ruby">      data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="175">
+        <li class="never" data-hits="" data-linenumber="170">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="172">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="173">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def calc_expires ttl = @options[:lifetime]</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="174">
+          <span class="hits">34</span>
+          
+          <code class="ruby">    return nil if ttl.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="34" data-linenumber="175">
+          <span class="hits">34</span>
+          
+          <code class="ruby">    Time.now+ttl</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="176">
@@ -1164,172 +1164,118 @@
         <li class="covered" data-hits="1" data-linenumber="178">
           <span class="hits">1</span>
           
-          <code class="ruby">  def calc_expires ttl = @options[:lifetime]</code>
+          <code class="ruby">  def collection</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="179">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="108" data-linenumber="179">
+          <span class="hits">108</span>
           
-          <code class="ruby">    return nil if ttl.nil?</code>
+          <code class="ruby">    @collection ||= db[@options[:collection]]</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="180">
-          <span class="hits">31</span>
+        <li class="never" data-hits="" data-linenumber="180">
           
-          <code class="ruby">    Time.now+ttl</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="181">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="182">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="183">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def read_cache id</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="184">
-          
-          
-          <code class="ruby">    collection.find_one(_id: id, expires: {'$gt' =&gt; Time.now}) rescue nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="185">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="186">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="187">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def collection</code>
-        </li>
-      
-        <li class="covered" data-hits="102" data-linenumber="188">
-          <span class="hits">102</span>
-          
-          <code class="ruby">    @collection ||= db[@options[:collection]]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="189">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="190">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="191">
+        <li class="covered" data-hits="1" data-linenumber="182">
           <span class="hits">1</span>
           
           <code class="ruby">  def db</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="192">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="183">
+          <span class="hits">13</span>
           
           <code class="ruby">    @db ||= connection[@options[:dbname]]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="193">
+        <li class="never" data-hits="" data-linenumber="184">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="never" data-hits="" data-linenumber="185">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="195">
+        <li class="covered" data-hits="1" data-linenumber="186">
           <span class="hits">1</span>
           
           <code class="ruby">  def connection</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="196">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="187">
+          <span class="hits">13</span>
           
           <code class="ruby">    @connection ||= connect</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="never" data-hits="" data-linenumber="188">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="never" data-hits="" data-linenumber="189">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="199">
+        <li class="covered" data-hits="1" data-linenumber="190">
           <span class="hits">1</span>
           
           <code class="ruby">  def connect</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="200">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="191">
+          <span class="hits">13</span>
           
           <code class="ruby">    ::Mongo::Connection.new(@options[:host], @options[:port], @options[:config])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="201">
+        <li class="never" data-hits="" data-linenumber="192">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="202">
+        <li class="never" data-hits="" data-linenumber="193">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="203">
+        <li class="covered" data-hits="1" data-linenumber="194">
           <span class="hits">1</span>
           
           <code class="ruby">  class NotFound &lt; Exception</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="204">
+        <li class="never" data-hits="" data-linenumber="195">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="205">
+        <li class="never" data-hits="" data-linenumber="196">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="206">
+        <li class="never" data-hits="" data-linenumber="197">
           
           
           <code class="ruby">end</code>
