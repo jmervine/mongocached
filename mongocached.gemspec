@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email       = ["joshua@mervine.net"]
   s.homepage    = "http://mongocached.rubyops.net/"
   s.summary     = "Simple disk cache"
-  s.description = "Simple mongodb based cache for things like Sinatra and Rails which is implemented much like Memcached in hopes that in some cases they're interchangeable. It's based off 'diskcached'"
+  s.description = "Simple mongodb based cache for things like Sinatra and Rails which is implemented much like Memcached in hopes that in some cases they're interchangeable. It's based off 'diskcached'. This gem should be considered 'alpha'!"
  
   s.required_rubygems_version = ">= 1.3.6"
   #s.rubyforge_project         = ""
