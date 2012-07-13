@@ -1,3 +1,8 @@
+## Benchmarks
+
+Note: This isn't expected to quite as fast as memcached, but based on these numbers, it's a viable replacement when you need shared a shared cache and do not have a ton of memory, as diskspace is cheap. If you don't need shared storeage and memory is still an issue, check out [Diskcached](https://github.com/rubyops/diskcached), [it's faster](https://github.com/rubyops/diskcached/wiki/Benchmark-Output).
+
+
 ### Ruby 1.9.3p194
  
  mo = mongocached / me = memcached 
@@ -20,15 +25,7 @@ me set 15.510000   2.340000  17.850000 ( 20.471940)
 mo get 39.740000   3.350000  43.090000 ( 47.473688)
 me get 14.950000   1.420000  16.370000 ( 17.187145)
 </pre> 
- 
-#### large hash * 100000
-<pre>
-      user     system      total        real
-mo set 40.650000   1.180000  41.830000 ( 42.026839)
-me set 16.590000   2.060000  18.650000 ( 20.909275)
-mo get 49.400000   5.650000  55.050000 ( 63.141785)
-me get 11.760000   1.810000  13.570000 ( 14.814693)
-</pre>
+
 
 ### Ruby 1.9.2p318
 
