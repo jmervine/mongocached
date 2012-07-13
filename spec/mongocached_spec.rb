@@ -26,7 +26,7 @@ describe Mongocached do
 
   describe "#set", "(#replace)" do
     before(:all) do
-      @cache = Mongocached.new({ lifetime: 0.5 })
+      @cache = Mongocached.new()
     end
     it "should create a new cache" do
       @cache.set('test1', "test string").should be_true
@@ -54,6 +54,7 @@ describe Mongocached do
   describe "#get", "single" do
     before(:all) do
       @cache = Mongocached.new({ lifetime: 0.5 })
+      @cache.set('test1', "test string")
     end
     it "should read cache before expiration" do
       @cache.get('test1').should eq "test string"

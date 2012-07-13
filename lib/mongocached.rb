@@ -61,15 +61,17 @@ class Mongocached
   # flush expired caches, ingoring when garbage collection was last run
   # update indexes
   def flush_expired!
-    gcpid = Process.fork do
+    # commenting out forking until I'm sure it's necessary
+    # and won't cause zombie processes
+    #gcpid = Process.fork do
       collection.remove(expires: {'$lt' => Time.now})
       unless @ensure_indexes
         collection.ensure_index([[:tags, 1]])
         collection.ensure_index([[:expires, -1]])
       end
       @cleanup_last = Time.now
-    end
-    Process.detach(gcpid)
+    #end
+    #Process.detach(gcpid)
   end
   alias :clean_expired :flush_expired!
 
