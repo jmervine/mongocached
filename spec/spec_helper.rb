@@ -5,7 +5,9 @@ end
 require 'rspec'
 require 'fileutils'
 require 'pp'
+require 'mongo'
 require './lib/mongocached'
+
 
 STORE = Mongo::Connection.new('localhost', '27017').db('mongocached').collection('cache')
 
@@ -40,4 +42,9 @@ class TestSubObject
 end
 
 # delete old rspec test directories
-STORE.drop
+begin
+  STORE.drop
+rescue Mongo::OperationFailure
+  abort "RSPEC ABORT -- tests don't currently support databases that require authentication!"
+end
+

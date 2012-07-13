@@ -2,13 +2,14 @@ require 'mongo'
 # @author Joshua P. Mervine <joshua@mervine.net>
 class Mongocached 
   # version for gem
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   @cleanup_last = nil
   @ensure_indexes = false
 
   # initialize object
   def initialize options={}
+
     @options = defaults.merge! options
 
     unless @options[:lifetime].nil?
@@ -186,7 +187,13 @@ class Mongocached
   end
 
   def db
-    @db ||= connection[@options[:dbname]]
+    unless @db
+      @db = connection[@options[:dbname]]
+      if @options.has_key?(:username) and @options.has_key?(:password) 
+        @db.authenticate(@options[:username], @options[:password])
+      end
+    end
+    @db
   end
 
   def connection
