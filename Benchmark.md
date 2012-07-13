@@ -1,6 +1,10 @@
 ## Benchmarks
 
-Note: This isn't expected to quite as fast as memcached, but based on these numbers, it's a viable replacement when you need shared a shared cache and do not have a ton of memory, as diskspace is cheap. If you don't need shared storeage and memory is still an issue, check out [Diskcached](https://github.com/rubyops/diskcached), [it's faster](https://github.com/rubyops/diskcached/wiki/Benchmark-Output).
+Note: 
+
+This isn't expected to quite as fast as memcached, but based on these numbers, it's a viable replacement when you need shared a shared cache and do not have a ton of memory, as diskspace is cheap. If you don't need shared storeage and memory is still an issue, check out [Diskcached](https://github.com/rubyops/diskcached), [it's faster](https://github.com/rubyops/diskcached/wiki/Benchmark-Output).
+
+Additionally, it's should be noted that these benchmarks were created via localhost, so network latency isn't a factor. I will add benchmarks over a network connection when I get a chance.  
 
 
 ### Ruby 1.9.3p194
