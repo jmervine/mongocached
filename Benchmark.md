@@ -1,3 +1,8 @@
+## Benchmarks
+
+Note: This isn't expected to quite as fast as memcached, but based on these numbers, it's a viable replacement when you need shared a shared cache and do not have a ton of memory, as diskspace is cheap.
+
+
 ### Ruby 1.9.3p194
  
  mo = mongocached / me = memcached 
