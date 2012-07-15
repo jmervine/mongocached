@@ -2,7 +2,7 @@ require 'mongo'
 # @author Joshua P. Mervine <joshua@mervine.net>
 class Mongocached 
   # version for gem
-  VERSION = '1.0.1'
+  VERSION = '1.0.2'
 
   @cleanup_last = nil
   @ensure_indexes = false

@@ -1,5 +1,10 @@
 # HISTORY
 
+## v1.0.2
+
+* Added mongo as a gem dep
+* Added bson_ext as a gem dep
+
 ## v1.0.1
 
 * Added authentication support
