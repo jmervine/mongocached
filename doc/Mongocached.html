@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+    <!-- RD version: 0.10.0  -->
   <meta content="text/html; charset=US-ASCII" http-equiv="Content-Type" />
-
   <title>Class: Mongocached</title>
+  <link rel="stylesheet" href="css/obf.css" >
 
-  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
 
-  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
-
+ 
+<script src="js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
 </head>
-<body id="top" class="class">
 
+<body id="top" class="class">
+<div id='actionbar' >
+<div class='wrapper'>
+  
+</div>
+</div> <!-- end action bar -->
+ <div class='wrapper'>
   <div id="metadata">
     <div id="home-metadata">
       <div id="home-section" class="section">
         <h3 class="section-header">
-          <a href="./index.html">Home</a>
-          <a href="./index.html#classes">Classes</a>
-          <a href="./index.html#methods">Methods</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#classes">Classes</a>
+          <a href="index.html#methods">Methods</a>
         </h3>
       </div>
     </div>
@@ -34,7 +44,7 @@
         <div class="section-body">
           <ul>
           
-            <li><a href="./lib/mongocached_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+            <li><a href="lib/mongocached_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
               class="thickbox" title="lib/mongocached.rb">lib/mongocached.rb</a></li>
           
           </ul>
@@ -120,7 +130,7 @@
 
       <div id="classindex-section" class="section project-section">
         <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="./images/find.png"
+          <span class="search-toggle"><img src="images/find.png"
             height="16" width="16" alt="[+]"
             title="show/hide quicksearch" /></span></h3>
         <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
@@ -133,9 +143,9 @@
 
         <ul class="link-list">
         
-          <li><a href="./Mongocached.html">Mongocached</a></li>
+          <li><a href="Mongocached.html">Mongocached</a></li>
         
-          <li><a href="./Mongocached/NotFound.html">Mongocached::NotFound</a></li>
+          <li><a href="Mongocached/NotFound.html">Mongocached::NotFound</a></li>
         
         </ul>
         <div id="no-class-search-results" style="display: none;">No matching classes.</div>
@@ -203,9 +213,11 @@
 
             
             <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 11</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">options</span>={}
+
   <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">options</span>
 
   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>].<span class="ruby-identifier">nil?</span>
@@ -218,7 +230,9 @@
   <span class="ruby-ivar">@last</span> = <span class="ruby-keyword">nil</span>
 
   <span class="ruby-identifier">flush_expired!</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- new-source -->
             
           </div>
@@ -227,7 +241,6 @@
 
           
         </div><!-- new-method -->
-
       
       </div><!-- public-class-method-details -->
     
@@ -258,8 +271,9 @@
 
             
             <div class="method-source-code" id="add-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 120</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
   <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">insert</span>({
@@ -274,7 +288,9 @@
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- add-source -->
             
           </div>
@@ -283,7 +299,6 @@
 
           
         </div><!-- add-method -->
-
       
         <div id="cache-method" class="method-detail method-alias">
           <a name="method-i-cache"></a>
@@ -312,7 +327,6 @@
           </div>
           
         </div><!-- cache-method -->
-
       
         <div id="clean-method" class="method-detail method-alias">
           <a name="method-i-clean"></a>
@@ -341,7 +355,6 @@
           </div>
           
         </div><!-- clean-method -->
-
       
         <div id="clean_expired-method" class="method-detail method-alias">
           <a name="method-i-clean_expired"></a>
@@ -370,7 +383,6 @@
           </div>
           
         </div><!-- clean_expired-method -->
-
       
         <div id="defaults-method" class="method-detail ">
           <a name="method-i-defaults"></a>
@@ -390,8 +402,9 @@
 
             
             <div class="method-source-code" id="defaults-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 26</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">defaults</span>
   {
     <span class="ruby-comment">#cache_id_prefix:              nil,</span>
@@ -405,7 +418,9 @@
     <span class="ruby-identifier">cleanup_life</span><span class="ruby-operator">:</span>                 <span class="ruby-value">1800</span>,
     <span class="ruby-identifier">config</span><span class="ruby-operator">:</span>                       {}
   }
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- defaults-source -->
             
           </div>
@@ -414,7 +429,6 @@
 
           
         </div><!-- defaults-method -->
-
       
         <div id="delete-method" class="method-detail ">
           <a name="method-i-delete"></a>
@@ -434,12 +448,15 @@
 
             
             <div class="method-source-code" id="delete-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 42</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span> <span class="ruby-identifier">id</span>
   <span class="ruby-ivar">@last</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">remove</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>)
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- delete-source -->
             
           </div>
@@ -452,7 +469,6 @@
 
           
         </div><!-- delete-method -->
-
       
         <div id="flush-method" class="method-detail ">
           <a name="method-i-flush"></a>
@@ -472,11 +488,14 @@
 
             
             <div class="method-source-code" id="flush-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 49</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">flush</span>
   <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">drop</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- flush-source -->
             
           </div>
@@ -489,7 +508,6 @@
 
           
         </div><!-- flush-method -->
-
       
         <div id="flush_expired-method" class="method-detail ">
           <a name="method-i-flush_expired"></a>
@@ -509,13 +527,16 @@
 
             
             <div class="method-source-code" id="flush_expired-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 55</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">flush_expired</span> 
   <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@cleanup_last</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_life</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-ivar">@cleanup_last</span><span class="ruby-operator">+</span><span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_life</span>]) <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
     <span class="ruby-identifier">flush_expired!</span>
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- flush_expired-source -->
             
           </div>
@@ -524,7 +545,6 @@
 
           
         </div><!-- flush_expired-method -->
-
       
         <div id="flush_expired-21-method" class="method-detail ">
           <a name="method-i-flush_expired-21"></a>
@@ -545,8 +565,9 @@ indexes</p>
 
             
             <div class="method-source-code" id="flush_expired-21-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 63</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">flush_expired!</span>
   <span class="ruby-comment"># commenting out forking until I'm sure it's necessary</span>
   <span class="ruby-comment"># and won't cause zombie processes</span>
@@ -559,7 +580,9 @@ indexes</p>
     <span class="ruby-ivar">@cleanup_last</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
   <span class="ruby-comment">#end</span>
   <span class="ruby-comment">#Process.detach(gcpid)</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- flush_expired-21-source -->
             
           </div>
@@ -572,7 +595,6 @@ indexes</p>
 
           
         </div><!-- flush_expired-21-method -->
-
       
         <div id="get-method" class="method-detail ">
           <a name="method-i-get"></a>
@@ -598,8 +620,9 @@ raises Diskcache::NotFound if none are available</p>
 
             
             <div class="method-source-code" id="get-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 139</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 140</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span> <span class="ruby-identifier">id</span>
   <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
@@ -620,7 +643,9 @@ raises Diskcache::NotFound if none are available</p>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">Mongocached</span><span class="ruby-operator">::</span><span class="ruby-constant">NotFound</span> 
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- get-source -->
             
           </div>
@@ -633,7 +658,6 @@ raises Diskcache::NotFound if none are available</p>
 
           
         </div><!-- get-method -->
-
       
         <div id="load-method" class="method-detail method-alias">
           <a name="method-i-load"></a>
@@ -662,7 +686,6 @@ raises Diskcache::NotFound if none are available</p>
           </div>
           
         </div><!-- load-method -->
-
       
         <div id="remove-method" class="method-detail method-alias">
           <a name="method-i-remove"></a>
@@ -691,7 +714,6 @@ raises Diskcache::NotFound if none are available</p>
           </div>
           
         </div><!-- remove-method -->
-
       
         <div id="replace-method" class="method-detail method-alias">
           <a name="method-i-replace"></a>
@@ -720,7 +742,6 @@ raises Diskcache::NotFound if none are available</p>
           </div>
           
         </div><!-- replace-method -->
-
       
         <div id="save-method" class="method-detail ">
           <a name="method-i-save"></a>
@@ -745,8 +766,9 @@ raises Diskcache::NotFound if none are available</p>
 
             
             <div class="method-source-code" id="save-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 81</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
   <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">find_one</span>(<span class="ruby-identifier">_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">expires</span><span class="ruby-operator">:</span> { <span class="ruby-string">'$gt'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> })
@@ -765,7 +787,9 @@ raises Diskcache::NotFound if none are available</p>
     <span class="ruby-comment"># when nothing is passed to yield and it's called</span>
     <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
   <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- save-source -->
             
           </div>
@@ -778,7 +802,6 @@ raises Diskcache::NotFound if none are available</p>
 
           
         </div><!-- save-method -->
-
       
         <div id="set-method" class="method-detail ">
           <a name="method-i-set"></a>
@@ -803,8 +826,9 @@ raises Diskcache::NotFound if none are available</p>
 
             
             <div class="method-source-code" id="set-source">
-<pre>
-<span class="ruby-comment"># File lib/mongocached.rb, line 105</span>
+              <pre>
+              <code class='cpp'> <!-- How can we tell the language? Can we grab the file extension of the parsed source file? --> 
+               <span class="ruby-comment"># File lib/mongocached.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span> <span class="ruby-identifier">id</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">tags</span> = [], <span class="ruby-identifier">ttl</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:lifetime</span>]
   <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">save</span>({
     <span class="ruby-identifier">_id</span><span class="ruby-operator">:</span>      <span class="ruby-identifier">id</span>,
@@ -814,7 +838,9 @@ raises Diskcache::NotFound if none are available</p>
   })
   <span class="ruby-identifier">flush_expired</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cleanup_auto</span>]
   <span class="ruby-keyword">true</span>
-<span class="ruby-keyword">end</span></pre>
+<span class="ruby-keyword">end</span>
+             </code>
+            </pre> 
             </div><!-- set-source -->
             
           </div>
@@ -827,21 +853,20 @@ raises Diskcache::NotFound if none are available</p>
 
           
         </div><!-- set-method -->
-
       
       </div><!-- public-instance-method-details -->
     
     </div><!-- 5Buntitled-5D -->
   
-
+   
   </div><!-- documentation -->
-
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
+  <div id='dynamic'></div>
+  
+<div class='grids wrapper' id="footer">
+  
+      <p><small>Generated with the <a href="http://neurogami.com/code/">Ruby-doc Rdoc Generator</a> 0.10.0</small>.</p>
   </div>
-
+</div>
+ 
 </body>
 </html>
-

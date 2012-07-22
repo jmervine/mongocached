@@ -112,3 +112,5 @@ jQuery.quicksearch = function( searchBox, searchElems, settings ) {
 
 	init();
 };
+
+
