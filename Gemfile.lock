@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:rubyops/rdoc-rubydoc.git
+  revision: 2f5c16f8302e1eafaa870aeae29f6872c574a3e5
+  specs:
+    rdoc-rubydoc (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -5,6 +11,7 @@ GEM
     bson_ext (1.6.4)
       bson (~> 1.6.4)
     diff-lcs (1.1.3)
+    diskcached (1.1.0)
     json (1.7.3)
     memcached (1.4.3)
     mongo (1.6.4)
@@ -17,7 +24,7 @@ GEM
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
       rspec-mocks (~> 2.11.0)
-    rspec-core (2.11.0)
+    rspec-core (2.11.1)
     rspec-expectations (2.11.1)
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.11.1)
@@ -31,9 +38,11 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
+  diskcached
   memcached
   mongo
   rake
   rdoc
+  rdoc-rubydoc!
   rspec
   simplecov
