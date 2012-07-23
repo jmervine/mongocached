@@ -8,7 +8,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rdoc'
+  gem 'yard'
+  gem 'redcarpet'
 end
 
 group :benchmark do
