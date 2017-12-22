@@ -1,1 +1,1 @@
-### See: [rubyops.net/gems/mongocached](http://www.rubyops.net/gems/mongocached)
+### See: http://www.mervine.net/projects/gems/mongocached
